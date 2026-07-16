@@ -1,28 +1,35 @@
-# Knowledge Graph RAG project page
+# RAG Application Using Knowledge Graph and Vector Search
 
-Static project page for the [Knowledge Graph RAG Assistant](https://github.com/ethanvillalovoz/knowledge-graph-rag-assistant), published at [knowledge-graph-rag.github.io](https://knowledge-graph-rag.github.io/).
+Official academic project page for the [Knowledge Graph RAG Assistant](https://github.com/ethanvillalovoz/knowledge-graph-rag-assistant).
 
-The page is an evidence-first walkthrough of the project. It hosts no backend or live model: FastAPI, FAISS retrieval, DBpedia queries, OpenAI synthesis, and the full corpus remain part of the source repository's local/Docker workflow.
+This `redesign-preview` branch contains the representative visual direction: paper identity, verified resources, authentic interface media, the paper abstract, and a contribution-specific evidence inspector. The published `main` branch remains unchanged until the direction is approved.
 
-## Edit locally
+## Run locally
 
-No build step or dependency install is required.
+Requirements: Node.js 20.19+ and pnpm.
 
 ```bash
-python3 -m http.server 4173
+pnpm install
+pnpm dev
 ```
 
-Open `http://127.0.0.1:4173/`. GitHub Pages publishes `index.html` from the `main` branch root.
+Create and inspect a production build with:
 
-## Content and assets
+```bash
+pnpm build
+pnpm preview
+```
 
-- Canonical content source: the maintained [project repository](https://github.com/ethanvillalovoz/knowledge-graph-rag-assistant).
-- The interface recording, poster, and retrieval-flow figure are served directly from that repository so this page does not maintain altered copies.
-- Claim, resource, artifact, and reference-influence records are maintained in [PROVENANCE.md](PROVENANCE.md).
-- The page's narrative, interaction, and acceptance criteria are documented in [DESIGN.md](DESIGN.md).
+## Evidence and rights
 
-The original capstone team was Molly Iverson, Ethan Villalovoz, Chandler Juego, and Adam Shtrikman. This page does not claim that its deterministic interface fixture is a retrieval-quality evaluation or that GitHub Pages hosts the full RAG pipeline.
+- Scientific identity and claims come from `public/paper/RAGApp-Academic-Paper-Final.pdf`.
+- Current code, data, reports, and authentic media come from the maintained project repository.
+- The interface shell is instantiated from Ethan Villalovoz's private `research-page-template`.
+- PointWorld and VoxPoser are design references only; no code or media from those sites is included.
+- The deterministic interface fixture demonstrates inspectability and does not measure retrieval or answer quality.
 
-## License status
+See [PROVENANCE.md](./PROVENANCE.md), [DESIGN.md](./DESIGN.md), and [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
 
-The application source repository carries an MIT license. This page repository does not currently apply a separate license to its page code; media and data retain the provenance and reuse conditions documented by their canonical sources.
+## License
+
+Original page implementation is available under the [MIT License](./LICENSE). Research media, paper content, names, datasets, and third-party marks retain their respective rights and are not relicensed as generic template content.

@@ -1,2 +1,6 @@
-output/
+node_modules/
+dist/
+*.tsbuildinfo
 .DS_Store
+.playwright-cli/
+output/

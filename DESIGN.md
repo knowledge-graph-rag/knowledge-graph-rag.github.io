@@ -1,42 +1,51 @@
-# Knowledge Graph RAG project page design brief
+# KG-RAG academic project page design brief
 
 ## Classification
 
 - Operating mode: official project page.
-- Baseline classification: redesign.
-- Audience: researchers, recruiters, open-source contributors, and capstone reviewers who need to understand and inspect the retrieval path quickly.
-- Primary job: explain what the project exposes, show authentic interface evidence, and route visitors to code and reproducibility artifacts.
+- Baseline classification: redesign. The published page is technically clean and honest, but its oversized editorial hero and product-record framing do not foreground the supplied academic paper.
+- Audience: researchers, capstone reviewers, recruiters, and open-source contributors.
+- Primary job: identify the paper, show the delivered system, distinguish the two retrieval paths, and route visitors to the paper and reproducibility artifacts.
 
 ## Page brief
 
-- One-sentence contribution: an evidence-aware RAG workspace that keeps semantic and DBpedia retrieval paths visible instead of hiding them behind a chat response.
-- First-viewport evidence: project identity, original-team status, canonical resources, and the authentic deterministic interface recording.
-- Complete resource set: code, local setup, dataset, interface recording, original capstone video, final report, abstract, client presentation, performance notes, and retrieval diagram source.
+- One-sentence contribution: a delivered RAG prototype that integrates exact dense retrieval over normalized SentenceTransformer embeddings with first-entity DBpedia context and language-model synthesis in one inspectable system.
+- First-viewport evidence: exact paper identity, author order, Washington State University affiliation, verified resources, and the authentic interface recording.
+- Complete resource set for the finished page: paper PDF, code, deterministic interface recording, original capstone video, dataset, final report, project abstract, client presentation, performance record, editable architecture source, and local/Docker setup.
 - Scientific questions:
-  1. What does the interface expose that a conventional chat UI hides?
-  2. How do vector and knowledge-graph paths contribute evidence?
-  3. What does the recorded demo establish, and what does it not establish?
-  4. How can someone reproduce or inspect the system?
-  5. What limitations remain?
-- Contribution-specific interaction: a four-stage, keyboard-operable retrieval-path stepper tied to the canonical architecture terminology. It explains the mechanism; it is not presented as experimental output.
+  1. What did the capstone system integrate and deliver?
+  2. What does dense retrieval contribute, and what does DBpedia contribute?
+  3. What does the deterministic interface fixture establish?
+  4. What testing and historical timing evidence exists?
+  5. What was not evaluated, and what remains limited?
+  6. How can another developer read, run, and inspect the project?
+- Contribution-specific interaction: an evidence inspector that exposes the checked-in deterministic query fixture, its two dense passages and scores, its knowledge-graph context, and the resulting synthesis. Visitors can focus either path without hiding the other by default.
 
 ## Design thesis
 
-Treat the page like a compact technical record: quiet editorial typography, visible provenance, and one inspectable evidence path. The identity comes from the graph/vector split and the project's authentic artifacts, not a generic marketing shell.
+Use the visual grammar of an academic paper page: centered identity, compact resource controls, authentic media, readable prose, and thin rules. The signature is the side-by-side evidence contract, with restrained blue and green path colors carried from retrieval to synthesis.
 
-## Signature element
+## Reference influence ledger
 
-The retrieval-path stepper keeps graph and vector evidence visually parallel before joining them at synthesis. Buttons expose `aria-pressed` state, work with keyboard and touch, retain a static fallback, and disable motion under `prefers-reduced-motion`.
+| Reference | Role | Principle adopted | Local adaptation | Boundary / not copied |
+| --- | --- | --- | --- | --- |
+| Ethan's private research-page template | Code lineage and shared shell | Centered paper identity, compact resources, responsive navigation, restrained citation treatment | React/Vite shell and accessible controls are instantiated with KG-RAG data and components | All PointWorld content, media, logos, project-specific explorers, and copy are removed |
+| PointWorld | Primary narrative reference | Establish paper identity and resources before the method; let authentic evidence dominate | The KG-RAG demo recording follows title, authors, affiliation, and resources | No code, custom icons, media, branding, or composition is copied |
+| VoxPoser | Component reference | Demonstrate behavior early and make the method inspectable | One controlled demo plus an evidence-path inspector | No code, media, prompt files, styling, or markup is copied |
+| Existing KG-RAG page | Project lineage | Preserve explicit fixture/static-hosting disclosures and complete project record | The disclosure is carried into the video caption and evidence module | The oversized editorial treatment and generic stage stepper are not retained |
+
+## Representative preview scope
+
+This branch intentionally implements only the reusable header, paper identity, authentic teaser, abstract, and central evidence inspector. Quantitative validation, architecture, limitations, reproducibility, team contributions, and citation are held until the direction is approved.
 
 ## Acceptance criteria
 
-- The first viewport names the project, its capstone/maintained-fork status, the original team, and exposes Code, Demo, Report, and Dataset links.
-- The authentic video uses its repository poster, native controls, metadata-only preload, and an explicit deterministic-fixture caption.
-- The architecture figure remains uncropped with meaningful alt text and an editable-source link.
-- The stepper has deterministic state, visible selection, keyboard focus, and useful content with JavaScript disabled.
-- No unsupported award, benchmark, factuality, latency, or hosted-demo claim appears.
-- Static-hosting limitations, retrieval limitations, and original-team attribution remain visible.
-- Desktop 1440×1000 and mobile 390×844 render without horizontal overflow.
-- All resource links resolve; video and figure assets load; no console errors remain.
-- Page has correct title, description, canonical URL, Open Graph metadata, favicon, semantic headings, skip link, focus visibility, reduced-motion handling, and HTTPS-only resources.
-- Publication preflight passes in official-project mode or any warning is documented.
+- Exact paper title, author order, and WSU affiliation match the supplied PDF.
+- No venue, award, DOI, arXiv identifier, or comparative accuracy claim is invented.
+- The paper, code, demo, and data resources are independently usable.
+- The authentic video has controls, a poster, `preload="metadata"`, and a fixture-not-benchmark caption.
+- The evidence inspector uses the checked-in frontend fixture verbatim in meaning and exposes both retrieval paths by default.
+- Focus controls are keyboard accessible, have visible selected state, and respect reduced motion.
+- Desktop 1440x1000 and mobile 390x844 render without horizontal overflow.
+- The production build, typecheck, console, and primary interaction pass before review.
+- The live `main` branch is not changed until the representative preview is approved.
