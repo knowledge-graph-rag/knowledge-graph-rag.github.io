@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RAG Application Using Knowledge Graph and Vector Search — a Washington State University senior capstone combining dense retrieval and DBpedia context.">
+  <meta name="keywords" content="retrieval-augmented generation, knowledge graph, vector search, DBpedia, FAISS">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:title" content="RAG Application Using Knowledge Graph and Vector Search">
+  <meta property="og:description" content="A hybrid retrieval assistant combining dense vector search with structured DBpedia context.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://knowledge-graph-rag.github.io/">
+  <meta property="og:image" content="https://knowledge-graph-rag.github.io/assets/media/rag-poster.webp">
+  <title>RAG Application Using Knowledge Graph and Vector Search</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-fullhd has-text-centered">
+        <h1 class="title is-1 publication-title">RAG Application Using Knowledge Graph<br> and Vector Search</h1>
+
+        <div class="is-size-5 publication-authors" aria-label="Authors">
+          <span class="author-block"><a href="https://github.com/mollyiverson" target="_blank" rel="noopener noreferrer">Molly Iverson</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="https://github.com/ethanvillalovoz" target="_blank" rel="noopener noreferrer">Ethan Villalovoz</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="https://github.com/chandyego84" target="_blank" rel="noopener noreferrer">Chandler Juego</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="https://www.linkedin.com/in/adamshtrikman/" target="_blank" rel="noopener noreferrer">Adam Shtrikman</a><sup>1</sup>,</span>
+          <span class="author-block"><a href="https://www.linkedin.com/in/vikas-aditya" target="_blank" rel="noopener noreferrer">Vikas Aditya</a><sup>2</sup>,</span>
+          <span class="author-block"><a href="https://school.eecs.wsu.edu/directory/wsu-profile/parteek.kumar/" target="_blank" rel="noopener noreferrer">Parteek Kumar</a><sup>1</sup></span>
+        </div>
+
+        <div class="is-size-5 publication-authors publication-affiliations">
+          <span class="author-block"><sup>1</sup>Washington State University,</span>
+          <span class="author-block"><sup>2</sup>HackerEarth</span>
+        </div>
+
+        <div class="affiliation-logos" aria-label="Affiliated organizations">
+          <a class="affiliation-logo-link wsu-logo-link" href="https://wsu.edu/" target="_blank" rel="noopener noreferrer" aria-label="Washington State University">
+            <img src="assets/brands/wsu-primary-horizontal.svg" alt="Washington State University">
+          </a>
+          <a class="affiliation-logo-link hackerearth-logo-link" href="https://www.hackerearth.com/" target="_blank" rel="noopener noreferrer" aria-label="HackerEarth">
+            <img src="assets/brands/hackerearth-wordmark.png" alt="HackerEarth">
+          </a>
+        </div>
+
+        <h2 class="title is-4 publication-status">Senior Capstone Project · Spring 2025</h2>
+
+        <nav class="publication-links" aria-label="Project resources">
+          <span class="link-block">
+            <a class="button is-normal is-rounded is-dark" href="assets/paper/RAGApp-Academic-Paper-Final.pdf" target="_blank" rel="noopener noreferrer">
+              <span class="icon icon-pdf" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 2.5h7l4 4v15h-11zM13.5 2.5v5h4M9 13h6M9 16h6"/></svg></span>
+              <span>Paper</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a class="button is-normal is-rounded is-dark" href="https://github.com/ethanvillalovoz/knowledge-graph-rag-assistant" target="_blank" rel="noopener noreferrer">
+              <span class="icon" aria-hidden="true"><svg class="github-mark" viewBox="0 0 24 24"><path d="M12 .7A11.5 11.5 0 0 0 8.4 23c.6.1.8-.3.8-.6v-2.2c-3.4.7-4.1-1.4-4.1-1.4-.5-1.4-1.3-1.8-1.3-1.8-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.7-.3-5.5-1.3-5.5-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.6.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C14.8 4.7 15.8 5 15.8 5c.6 1.5.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.8 5.4-5.5 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A11.5 11.5 0 0 0 12 .7Z"/></svg></span>
+              <span>Code</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a class="button is-normal is-rounded is-dark" href="https://www.youtube.com/watch?v=YWdR3FAdq1o" target="_blank" rel="noopener noreferrer">
+              <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path class="youtube-body" d="M23.1 6.3a3 3 0 0 0-2.1-2.1C19.1 3.7 12 3.7 12 3.7s-7.1 0-9 .5A3 3 0 0 0 .9 6.3 31 31 0 0 0 .4 12a31 31 0 0 0 .5 5.7A3 3 0 0 0 3 19.8c1.9.5 9 .5 9 .5s7.1 0 9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-5.7 31 31 0 0 0-.5-5.7Z"/><path class="youtube-play" d="m9.6 15.6 6.2-3.6-6.2-3.6Z"/></svg></span>
+              <span>Video</span>
+            </a>
+          </span>
+          <span class="link-block">
+            <a class="button is-normal is-rounded is-dark" href="https://huggingface.co/datasets/miverson9/acme10-he-ragapp-embeddings/tree/main" target="_blank" rel="noopener noreferrer">
+              <span class="icon" aria-hidden="true"><img src="assets/brands/huggingface.svg" alt=""></span>
+              <span>Data</span>
+            </a>
+          </span>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero teaser" aria-labelledby="teaser-summary">
+      <div class="container is-fullhd">
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <video id="teaser-video" autoplay muted loop playsinline preload="metadata" poster="assets/media/rag-poster.webp" aria-label="KG-RAG Assistant interface walkthrough">
+              <source src="assets/media/rag-demo.mp4" type="video/mp4">
+              Your browser does not support embedded video. <a href="assets/media/rag-demo.mp4">Download the walkthrough</a>.
+            </video>
+            <h2 id="teaser-summary" class="subtitle teaser-copy"><span class="project-name">KG-RAG Assistant</span> combines <strong>dense semantic retrieval</strong> with <strong>DBpedia entity context</strong><br class="desktop-break"> to ground answers in both unstructured passages and structured knowledge.</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-light is-small project-views" aria-label="Project views">
+      <div class="hero-body">
+        <div class="container">
+          <div class="view-grid">
+            <figure class="view-item">
+              <img src="assets/media/rag-poster.webp" alt="KG-RAG Assistant interface showing an answer with retrieved context" loading="lazy">
+            </figure>
+            <figure class="view-item diagram-item">
+              <img src="assets/media/retrieval-flow.svg" alt="KG-RAG retrieval pipeline combining DBpedia and FAISS evidence" loading="lazy">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="subtitle has-text-centered post-showcase">A two-path retrieval system that augments vector search with structured entity context before response generation.</h2>
+
+    <section class="section" id="abstract">
+      <div class="container is-max-desktop">
+        <div class="content-column">
+          <h2 class="title is-3 has-text-centered">Abstract</h2>
+          <div class="content justify">
+            <p>Retrieval-augmented generation conditions a language model on information retrieved from an external corpus. This report presents KG-RAG Assistant, a senior capstone application that combines two retrieval paths: dense vector search over more than 10,000 Wikipedia articles and structured entity context from DBpedia. The system also supports a replaceable collection of PDF class notes to demonstrate retrieval over private or domain-specific material.</p>
+            <p>A React interface communicates with a FastAPI backend, where spaCy processes the question, SentenceTransformer encodes it, FAISS retrieves semantically similar text, SPARQL queries DBpedia for the first recognized entity, and an OpenAI model synthesizes the resulting context. The team packaged the frontend and backend with Docker and exercised the implementation through unit, integration, functional, performance, and client-acceptance testing.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-spacer" aria-hidden="true"></div>
+
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube-nocookie.com/embed/YWdR3FAdq1o" title="KG-RAG Assistant prototype walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3">Knowledge Graph RAG Assistant</h2>
+        <figure class="publication-figure">
+          <img src="assets/media/retrieval-flow.svg" alt="A question branches to spaCy entity extraction and DBpedia SPARQL on one path, and SentenceTransformer embedding and FAISS vector search on the other; both meet in a grounded prompt before response synthesis." loading="lazy">
+        </figure>
+        <div class="content method-copy">
+          <p>The dense path encodes text with <strong>all-MiniLM-L6-v2</strong>, normalizes embeddings, and performs exact inner-product search with <strong>FAISS IndexFlatIP</strong>. Results below the configured similarity threshold are discarded.</p>
+          <p>The structured path uses <strong>spaCy</strong> to find the first named entity and constructs a <strong>SPARQL</strong> query for an English <strong>DBpedia</strong> abstract. Both contexts are supplied to the final response-generation prompt.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="evaluation">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3">Engineering Evaluation</h2>
+        <div class="content justify">
+          <p>The project was evaluated as a software-engineering prototype through unit, integration, functional, performance, and client-acceptance testing. All representative cases documented in the final report passed.</p>
+          <p>For the prompt “Who is Alan Turing?”, the final three recorded runs averaged 7.615 seconds end to end. Because the report did not preserve hardware, variance, warm-up policy, network conditions, and complete runtime metadata, this is a historical engineering measurement rather than a reproducible benchmark.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="limitations">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3">Limitations</h2>
+        <div class="content justify">
+          <p>Answer quality was not benchmarked on a fixed dataset. The project did not evaluate exact match, factuality, citation correctness, retrieval recall, or human preference, and therefore does not establish an accuracy advantage from knowledge-graph augmentation.</p>
+          <p>Entity processing uses the first spaCy entity and an exact English label in SPARQL. Questions with multiple entities, aliases, ambiguous names, or complex relations can return no context or the wrong resource.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="acknowledgements">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3">Acknowledgements</h2>
+        <div class="content justify">
+          <p>The team thanks Vikas Aditya of HackerEarth for weekly technical feedback and mentorship, and Dr. Parteek Kumar for guidance throughout the capstone development and documentation process.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section paper-section" id="paper">
+      <div class="container is-max-desktop">
+        <div class="paper-heading has-text-centered">
+          <h2 class="title is-2">Paper</h2>
+        </div>
+
+        <div class="paper-columns">
+          <div class="paper-thumbnail">
+            <a class="paper-stack" href="assets/paper/RAGApp-Academic-Paper-Final.pdf" target="_blank" rel="noopener noreferrer" aria-label="Open the full paper PDF">
+              <img class="paper-sheet paper-sheet-4" src="assets/paper/paper-preview.webp" alt="" aria-hidden="true">
+              <img class="paper-sheet paper-sheet-3" src="assets/paper/paper-preview.webp" alt="" aria-hidden="true">
+              <img class="paper-sheet paper-sheet-2" src="assets/paper/paper-preview.webp" alt="" aria-hidden="true">
+              <img class="paper-sheet paper-sheet-1" src="assets/paper/paper-preview.webp" alt="" aria-hidden="true">
+              <img class="paper-sheet paper-sheet-front" src="assets/paper/paper-preview.webp" alt="First page of RAG Application Using Knowledge Graph and Vector Search">
+            </a>
+          </div>
+
+          <div class="paper-information">
+            <div class="paper-metadata has-text-centered">
+              <h3 class="title is-4">RAG Application Using Knowledge Graph and Vector Search</h3>
+              <p class="paper-authors">
+                <a href="https://github.com/mollyiverson" target="_blank" rel="noopener noreferrer">Molly Iverson</a>,
+                <a href="https://github.com/ethanvillalovoz" target="_blank" rel="noopener noreferrer">Ethan Villalovoz</a>,
+                <a href="https://github.com/chandyego84" target="_blank" rel="noopener noreferrer">Chandler Juego</a>, and
+                <a href="https://www.linkedin.com/in/adamshtrikman/" target="_blank" rel="noopener noreferrer">Adam Shtrikman</a>
+              </p>
+            </div>
+
+            <div class="citation-box">
+              <pre><code id="bibtex-code">@techreport{iverson2025knowledgegraphrag,
+  title       = {RAG Application Using Knowledge Graph and Vector Search},
+  author      = {Iverson, Molly and Villalovoz, Ethan and Juego, Chandler and Shtrikman, Adam},
+  institution = {Washington State University},
+  type        = {Senior Capstone Report},
+  year        = {2025},
+  url         = {https://knowledge-graph-rag.github.io/}
+}</code></pre>
+              <button class="copy-button" type="button" data-copy-citation aria-describedby="copy-status">Copy</button>
+            </div>
+            <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>Website template borrowed from <a href="https://github.com/nerfies/nerfies.github.io" target="_blank" rel="noopener noreferrer">NeRFies</a> and <a href="https://peract.github.io/" target="_blank" rel="noopener noreferrer">PerAct</a> and <a href="https://voxposer.github.io/" target="_blank" rel="noopener noreferrer">VoxPoser</a>.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
