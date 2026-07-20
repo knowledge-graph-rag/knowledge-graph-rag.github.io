@@ -343,11 +343,31 @@ sup {
   padding-top: 0;
 }
 
-.teaser video {
+.current-demo video {
   display: block;
   width: 60%;
   margin: 0 auto;
   object-fit: fill;
+}
+
+.media-caption {
+  width: min(60%, 960px);
+  margin: .75rem auto 0;
+  color: #777;
+  font-size: .8rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.archival-prototype {
+  margin-bottom: 1.5rem;
+}
+
+.archival-prototype img {
+  display: block;
+  width: min(100%, 960px);
+  margin: 0 auto;
+  object-fit: contain;
 }
 
 .teaser-copy {
@@ -375,6 +395,15 @@ sup {
   max-width: 960px;
   margin: 0 auto;
   text-align: justify;
+}
+
+.figure-takeaway {
+  max-width: 960px;
+  margin: .8rem auto 0;
+  color: #666;
+  font-size: .9rem;
+  line-height: 1.5;
+  text-align: left;
 }
 
 .evaluation-figures {
@@ -687,7 +716,8 @@ pre {
     width: 240px;
   }
 
-  .teaser video {
+  .current-demo video,
+  .media-caption {
     width: 100%;
   }
 

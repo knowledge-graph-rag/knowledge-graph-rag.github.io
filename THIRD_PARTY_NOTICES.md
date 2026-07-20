@@ -12,7 +12,7 @@ The WSU primary horizontal lockup is sourced from the official WSU brand logos p
 
 ## Project Material
 
-The paper, demo, poster, system-overview figure, validation figures, names, and project statements concern *RAG Application Using Knowledge Graph and Vector Search* by Molly Iverson, Ethan Villalovoz, Chandler Juego, Adam Shtrikman, Vikas Aditya, and Parteek Kumar. They are included for this authorized project page and are not offered as generic template fixtures.
+The paper, deterministic maintained-interface demo and poster, archival prototype sequence, system-overview figure, validation figures, names, and project statements concern *RAG Application Using Knowledge Graph and Vector Search* by Molly Iverson, Ethan Villalovoz, Chandler Juego, Adam Shtrikman, Vikas Aditya, and Parteek Kumar. They are included for this authorized project page and are not offered as generic template fixtures.
 
 ## Design References
 

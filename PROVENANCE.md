@@ -16,7 +16,7 @@ Verified: 2026-07-19
 | Historical timing | Final three-run average of 7.615 seconds for one Alan Turing prompt | Revised supplied technical report | Section 6.2; Figure 5; Appendix A.2 | Historical engineering measurement, not a reproducible benchmark or latency guarantee |
 | Evaluation boundary | Answer quality and a KG accuracy advantage were not benchmarked | Revised supplied technical report | Sections 6-8 | Remains visible beside the validation evidence |
 | Code | `ethanvillalovoz/knowledge-graph-rag-assistant` | Official maintained repository | README and repository URL | Public MIT-licensed source repository |
-| Demo | YouTube project record and checked-in MP4 | Official maintained repository | README; `docs/media` | Interface demonstration, not a retrieval-quality evaluation |
+| Maintained-interface demo | Checked-in deterministic demo recording and YouTube project record | Official maintained repository | README; `docs/media/rag-demo.mp4`; frontend `demo.ts` | Demonstrates the maintained UI; explicitly not presented as live retrieval or a retrieval-quality evaluation |
 | Data | Project-owned retrieval artifacts at immutable revision `28777c9a144261672040710e0316ca5e40345172` | Official maintained repository | README; `docs/REPRODUCIBILITY.md` | Original teammate-hosted repository remains documented as provenance |
 | Software release | v1.1.1; DOI `10.5281/zenodo.21445868` | Official maintained repository | `CITATION.cff`; README | Displayed as software metadata, not a paper venue |
 | Paper-to-code boundary | Report records April 2025 commit `1ad5cc0`; current `main` is maintained v1.1.1 | Official maintained repository | `docs/REPRODUCIBILITY.md` | Reproductions must record the intended code surface |
@@ -28,16 +28,17 @@ Verified: 2026-07-19
 
 | Shipped asset | Role | Original source | Rights status | Transform |
 | --- | --- | --- | --- | --- |
-| `assets/media/rag-demo.mp4` | Prototype teaser | KG-RAG repository | Team-authored project asset | None |
-| `assets/media/rag-poster.webp` | Video poster | KG-RAG repository | Team-authored project asset | None |
-| `assets/media/system-overview-paper.svg` | Archived April 2025 system overview | KG-RAG repository | Team-authored project asset | None |
+| `assets/media/rag-demo.mp4` | Maintained-interface teaser | Official maintained repository | Team-authored project asset | None; visible caption identifies deterministic demo mode |
+| `assets/media/rag-poster.webp` | Maintained-interface video poster and social preview | Official maintained repository | Team-authored project asset | None |
+| `assets/media/prototype-sequence.png` | Archival April 2025 prototype sequence | Revised supplied technical report, Figure 3 on page 4 | User-authorized project asset | Complete figure region rasterized; panel labels and caption retained; no generative editing |
+| `assets/media/system-overview-paper.svg` | Derived April 2025 system overview | Official maintained repository; regenerated from archived code and report | Team-authored project asset | Explanatory redraw, not an original experiment screenshot |
 | `assets/media/validation-record.webp` | Figure 4 validation record | Revised supplied technical report | User-authorized project asset | Figure region rasterized from page 5; labels and conditions retained |
 | `assets/media/timing-record.webp` | Figure 5 historical timing record | Revised supplied technical report | User-authorized project asset | Figure region rasterized from page 5; labels and conditions retained |
 | `assets/paper/RAGApp-Academic-Paper-Final.pdf` | Revised technical report resource | User-supplied revised paper | User-authorized project asset | Stable website filename retained |
 | `assets/paper/paper-preview.webp` | Revised paper preview | User-supplied revised paper | User-authorized project asset | First page rasterized and resized |
 | `assets/brands/wsu-primary-horizontal.svg` | WSU affiliation mark | Official WSU brand logos page inline primary horizontal lockup | Institutional trademark; used factually | Official inline SVG packaged locally with its official page colors; geometry unchanged |
 | `assets/brands/hackerearth-wordmark.png` | Client mark | Official HackerEarth Help Center logo asset | Company mark; used factually | None |
-| `assets/brands/huggingface.svg` | Dataset service icon | Official Hugging Face site asset | Service mark; used to identify destination | None |
+| `assets/brands/huggingface.svg` | Retrieval-artifact service icon | Official Hugging Face site asset | Service mark; used to identify destination | None |
 
 ## Visual Reference Boundary
 

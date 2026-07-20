@@ -15,11 +15,11 @@ HackerEarth.
 .
 ├── assets/
 │   ├── brands/        Affiliation and resource marks
-│   ├── media/         Project video, poster, and report figures
+│   ├── media/         Maintained demo, archival sequence, and report figures
 │   └── paper/         Technical report and first-page preview
 ├── index.html         Page content and semantic structure
 ├── styles.css         Layout, typography, and responsive styles
-├── script.js          Citation tabs, copy control, and motion preference
+├── script.js          Citation controls and reduced-motion video behavior
 ├── DESIGN.md          Design system and acceptance criteria
 ├── PROVENANCE.md      Content, artifact, and reference-source ledger
 └── THIRD_PARTY_NOTICES.md
@@ -46,8 +46,8 @@ Then open <http://127.0.0.1:4180/>.
 - Record material layout or interaction changes in [DESIGN.md](DESIGN.md).
 - Keep project media under `assets/media/`, brand marks under `assets/brands/`,
   and paper files under `assets/paper/`.
-- Preserve reduced-motion behavior for the teaser video and keyboard behavior
-  for the citation tabs.
+- Preserve keyboard behavior for the citation tabs and reduced-motion behavior
+  for the maintained-interface demo.
 
 ## Validation
 
@@ -58,9 +58,9 @@ node --check script.js
 git diff --check
 ```
 
-Also inspect the page at desktop and mobile widths, exercise both citation
-tabs and the copy button, and confirm that local assets and outbound resources
-resolve.
+Also inspect the page at desktop and mobile widths, exercise the citation tabs
+with pointer and keyboard input, test the copy button, and confirm
+that local assets and outbound resources resolve.
 
 ## Deployment
 
