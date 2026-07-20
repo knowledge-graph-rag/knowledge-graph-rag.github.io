@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="RAG Application Using Knowledge Graph and Vector Search — a Washington State University senior capstone combining dense retrieval and DBpedia context.">
+  <meta name="description" content="RAG Application Using Knowledge Graph and Vector Search — a citable Washington State University capstone artifact combining dense retrieval and DBpedia context.">
   <meta name="keywords" content="retrieval-augmented generation, knowledge graph, vector search, DBpedia, FAISS">
   <meta name="theme-color" content="#ffffff">
   <meta property="og:title" content="RAG Application Using Knowledge Graph and Vector Search">
@@ -14,7 +14,7 @@
   <title>RAG Application Using Knowledge Graph and Vector Search</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=20260719">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -69,7 +69,7 @@
             </a>
           </span>
           <span class="link-block">
-            <a class="button is-normal is-rounded is-dark" href="https://huggingface.co/datasets/miverson9/acme10-he-ragapp-embeddings/tree/main" target="_blank" rel="noopener noreferrer">
+            <a class="button is-normal is-rounded is-dark" href="https://huggingface.co/datasets/ethanvillalovoz/knowledge-graph-rag-retrieval-artifacts/tree/28777c9a144261672040710e0316ca5e40345172" target="_blank" rel="noopener noreferrer">
               <span class="icon" aria-hidden="true"><img src="assets/brands/huggingface.svg" alt=""></span>
               <span>Data</span>
             </a>
@@ -94,49 +94,23 @@
       </div>
     </section>
 
-    <section class="hero is-light is-small project-views" aria-label="Project views">
-      <div class="hero-body">
-        <div class="container">
-          <div class="view-grid">
-            <figure class="view-item">
-              <img src="assets/media/rag-poster.webp" alt="KG-RAG Assistant interface showing an answer with retrieved context" loading="lazy">
-            </figure>
-            <figure class="view-item diagram-item">
-              <img src="assets/media/retrieval-flow.svg" alt="KG-RAG retrieval pipeline combining DBpedia and FAISS evidence" loading="lazy">
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <h2 class="subtitle has-text-centered post-showcase">A two-path retrieval system that augments vector search with structured entity context before response generation.</h2>
-
     <section class="section" id="abstract">
       <div class="container is-max-desktop">
         <div class="content-column">
           <h2 class="title is-3 has-text-centered">Abstract</h2>
           <div class="content justify">
             <p>Retrieval-augmented generation conditions a language model on information retrieved from an external corpus. This report presents KG-RAG Assistant, a senior capstone application that combines two retrieval paths: dense vector search over more than 10,000 Wikipedia articles and structured entity context from DBpedia. The system also supports a replaceable collection of PDF class notes to demonstrate retrieval over private or domain-specific material.</p>
-            <p>A React interface communicates with a FastAPI backend, where spaCy processes the question, SentenceTransformer encodes it, FAISS retrieves semantically similar text, SPARQL queries DBpedia for the first recognized entity, and an OpenAI model synthesizes the resulting context. The team packaged the frontend and backend with Docker and exercised the implementation through unit, integration, functional, performance, and client-acceptance testing.</p>
+            <p>A React interface communicates with a FastAPI backend, where spaCy processes the question, SentenceTransformer encodes it, FAISS retrieves semantically similar text, SPARQL queries DBpedia for the first recognized entity, and an OpenAI model synthesizes the resulting context. The implementation is packaged with Docker as a modular systems prototype.</p>
           </div>
-        </div>
-      </div>
-
-      <div class="section-spacer" aria-hidden="true"></div>
-
-      <div class="container is-max-widescreen">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube-nocookie.com/embed/YWdR3FAdq1o" title="KG-RAG Assistant prototype walkthrough" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
       </div>
     </section>
 
     <section class="section" id="method">
       <div class="container is-max-widescreen">
-        <h2 class="title is-3">Knowledge Graph RAG Assistant</h2>
+        <h2 class="title is-3">System Overview</h2>
         <figure class="publication-figure">
-          <img src="assets/media/retrieval-flow.svg" alt="A question branches to spaCy entity extraction and DBpedia SPARQL on one path, and SentenceTransformer embedding and FAISS vector search on the other; both meet in a grounded prompt before response synthesis." loading="lazy">
+          <img src="assets/media/system-overview-paper.svg" alt="The archived April 2025 query episode: a question is analyzed with spaCy, then DBpedia and dense passages are retrieved sequentially before prompt assembly and generation." loading="lazy">
         </figure>
         <div class="content method-copy">
           <p>The dense path encodes text with <strong>all-MiniLM-L6-v2</strong>, normalizes embeddings, and performs exact inner-product search with <strong>FAISS IndexFlatIP</strong>. Results below the configured similarity threshold are discarded.</p>
@@ -149,8 +123,15 @@
       <div class="container is-max-widescreen">
         <h2 class="title is-3">Engineering Evaluation</h2>
         <div class="content justify">
-          <p>The project was evaluated as a software-engineering prototype through unit, integration, functional, performance, and client-acceptance testing. All representative cases documented in the final report passed.</p>
-          <p>For the prompt “Who is Alan Turing?”, the final three recorded runs averaged 7.615 seconds end to end. Because the report did not preserve hardware, variance, warm-up policy, network conditions, and complete runtime metadata, this is a historical engineering measurement rather than a reproducible benchmark.</p>
+          <p>The preserved evaluation is software-engineering validation, not an information-retrieval or question-answering benchmark. The report documents twelve representative passing cases across NLP, DBpedia, vector search, and the LLM handler. A separate CI screenshot records sixteen passed tests and four warnings; the counts are not merged because the project record does not preserve a one-to-one mapping.</p>
+        </div>
+        <div class="evaluation-figures">
+          <figure class="evidence-figure">
+            <img src="assets/media/validation-record.webp" alt="Twelve representative passing cases are distributed across NLP, DBpedia, vector search, and LLM subsystems; a separate CI artifact shows sixteen passed tests and four warnings." loading="lazy">
+          </figure>
+          <figure class="evidence-figure">
+            <img src="assets/media/timing-record.webp" alt="Historical timing plot showing three calls per development snapshot and final component means; the final prototype averages 7.615 seconds for the recorded prompt." loading="lazy">
+          </figure>
         </div>
       </div>
     </section>
@@ -161,15 +142,40 @@
         <div class="content justify">
           <p>Answer quality was not benchmarked on a fixed dataset. The project did not evaluate exact match, factuality, citation correctness, retrieval recall, or human preference, and therefore does not establish an accuracy advantage from knowledge-graph augmentation.</p>
           <p>Entity processing uses the first spaCy entity and an exact English label in SPARQL. Questions with multiple entities, aliases, ambiguous names, or complex relations can return no context or the wrong resource.</p>
+          <p>The archived 2025 interface did not expose the selected passages or graph facts. The maintained interface now presents an inspectable retrieval trace, but its deterministic fixture demonstrates the interaction and is not a live-model or answer-quality result.</p>
         </div>
       </div>
     </section>
 
-    <section class="section" id="acknowledgements">
+    <section class="section" id="reproducibility">
       <div class="container is-max-widescreen">
-        <h2 class="title is-3">Acknowledgements</h2>
+        <h2 class="title is-3">Reproducibility</h2>
+        <div class="content reproducibility-intro">
+          <p>The technical report records the April 2025 capstone implementation at <a href="https://github.com/ethanvillalovoz/knowledge-graph-rag-assistant/tree/1ad5cc08cbebdeae655cad626393364b2f476556" target="_blank" rel="noopener noreferrer">commit <code>1ad5cc0</code></a>. The <a href="https://github.com/ethanvillalovoz/knowledge-graph-rag-assistant" target="_blank" rel="noopener noreferrer">current repository</a> is the maintained v1.1.1 software release and includes later interface, documentation, dependency, and safety improvements.</p>
+        </div>
+        <dl class="reproducibility-list">
+          <div class="reproducibility-row">
+            <dt>Interface review</dt>
+            <dd>A deterministic fixture demonstrates source selection and the retrieval trace without requiring external services. It does not evaluate retrieval or answer quality.</dd>
+          </div>
+          <div class="reproducibility-row">
+            <dt>Maintained code checks</dt>
+            <dd>Backend and frontend suites run independently in CI. Live DBpedia availability, OpenAI responses, network latency, and generated wording remain outside the deterministic test surface.</dd>
+          </div>
+          <div class="reproducibility-row">
+            <dt>Full retrieval prototype</dt>
+            <dd>The Wikipedia corpus, embedding matrix, and FAISS index are versioned outside Git and verified against pinned integrity records before use.</dd>
+          </div>
+        </dl>
+        <p class="reproducibility-link"><a href="https://github.com/ethanvillalovoz/knowledge-graph-rag-assistant/blob/main/docs/REPRODUCIBILITY.md" target="_blank" rel="noopener noreferrer">Read the complete reproducibility record →</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="contributions">
+      <div class="container is-max-widescreen">
+        <h2 class="title is-3">Author Contributions</h2>
         <div class="content justify">
-          <p>The team thanks Vikas Aditya of HackerEarth for weekly technical feedback and mentorship, and Dr. Parteek Kumar for guidance throughout the capstone development and documentation process.</p>
+          <p>Molly Iverson, Ethan Villalovoz, Chandler Juego, and Adam Shtrikman jointly designed, implemented, tested, documented, and delivered the capstone system. Vikas Aditya provided project guidance and client feedback, and Parteek Kumar provided capstone instruction and supervision.</p>
         </div>
       </div>
     </section>
@@ -197,21 +203,41 @@
               <p class="paper-authors">
                 <a href="https://github.com/mollyiverson" target="_blank" rel="noopener noreferrer">Molly Iverson</a>,
                 <a href="https://github.com/ethanvillalovoz" target="_blank" rel="noopener noreferrer">Ethan Villalovoz</a>,
-                <a href="https://github.com/chandyego84" target="_blank" rel="noopener noreferrer">Chandler Juego</a>, and
-                <a href="https://www.linkedin.com/in/adamshtrikman/" target="_blank" rel="noopener noreferrer">Adam Shtrikman</a>
+                <a href="https://github.com/chandyego84" target="_blank" rel="noopener noreferrer">Chandler Juego</a>,
+                <a href="https://www.linkedin.com/in/adamshtrikman/" target="_blank" rel="noopener noreferrer">Adam Shtrikman</a>,
+                <a href="https://www.linkedin.com/in/vikas-aditya" target="_blank" rel="noopener noreferrer">Vikas Aditya</a>, and
+                <a href="https://school.eecs.wsu.edu/directory/wsu-profile/parteek.kumar/" target="_blank" rel="noopener noreferrer">Parteek Kumar</a>
               </p>
+              <p class="paper-record"><a href="https://doi.org/10.5281/zenodo.21445868" target="_blank" rel="noopener noreferrer">Archived software v1.1.1 · DOI 10.5281/zenodo.21445868</a></p>
             </div>
 
             <div class="citation-box">
-              <pre><code id="bibtex-code">@techreport{iverson2025knowledgegraphrag,
+              <div class="citation-toolbar">
+                <div class="citation-tabs" role="tablist" aria-label="Citation format">
+                  <button id="report-citation-tab" class="citation-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="report-citation-panel" data-citation-tab="report">Report</button>
+                  <button id="software-citation-tab" class="citation-tab" type="button" role="tab" aria-selected="false" aria-controls="software-citation-panel" data-citation-tab="software" tabindex="-1">Software</button>
+                </div>
+                <button class="copy-button" type="button" data-copy-citation aria-describedby="copy-status">Copy</button>
+              </div>
+              <div id="report-citation-panel" role="tabpanel" aria-labelledby="report-citation-tab" data-citation-panel="report">
+                <pre><code data-citation-code>@techreport{iverson2025knowledgegraphrag,
   title       = {RAG Application Using Knowledge Graph and Vector Search},
-  author      = {Iverson, Molly and Villalovoz, Ethan and Juego, Chandler and Shtrikman, Adam},
+  author      = {Iverson, Molly and Villalovoz, Ethan and Juego, Chandler and Shtrikman, Adam and Aditya, Vikas and Kumar, Parteek},
   institution = {Washington State University},
-  type        = {Senior Capstone Report},
   year        = {2025},
   url         = {https://knowledge-graph-rag.github.io/}
 }</code></pre>
-              <button class="copy-button" type="button" data-copy-citation aria-describedby="copy-status">Copy</button>
+              </div>
+              <div id="software-citation-panel" role="tabpanel" aria-labelledby="software-citation-tab" data-citation-panel="software" hidden>
+                <pre><code data-citation-code>@software{iverson2026knowledgegraphrag,
+  title   = {Knowledge Graph RAG Assistant},
+  author  = {Iverson, Molly and Villalovoz, Ethan and Juego, Chandler and Shtrikman, Adam},
+  version = {1.1.1},
+  date    = {2026-07-19},
+  doi     = {10.5281/zenodo.21445868},
+  url     = {https://doi.org/10.5281/zenodo.21445868}
+}</code></pre>
+              </div>
             </div>
             <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
           </div>
@@ -228,6 +254,6 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=20260719"></script>
 </body>
 </html>
